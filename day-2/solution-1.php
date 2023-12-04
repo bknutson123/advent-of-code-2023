@@ -11,7 +11,7 @@ $highestRedValue = 12;
 $highestGreenValue = 13;
 $highestBlueValue = 14;
 
-$totalValue = iterateInput(function ($line) use ($highestRedValue, $highestGreenValue, $highestBlueValue) {
+$totalValue = iterateInput(function ($line, $lineNumber) use ($highestRedValue, $highestGreenValue, $highestBlueValue) {
 	$blueNumbers = getIntValueBefore($line,"blue");
 	$redNumbers = getIntValueBefore($line, "red");
 	$greenNumbers = getIntValueBefore($line, "green");

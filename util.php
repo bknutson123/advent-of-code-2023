@@ -17,3 +17,23 @@ function iterateInput(callable $fn) {
 
 	return $result;
 }
+
+function getLookupArray() {
+	$file = fopen('input.txt', 'r');
+
+	if ($file) {
+		$line_number = 0;
+		$lookupArray = [];
+		while (($line = fgets($file)) !== false) {
+			$line = str_replace(["\r", "\n"], '', $line);
+			for ($columnNumber = 0; $columnNumber <= strlen($line) - 1; $columnNumber++) {
+				$lookupArray[$line_number][$columnNumber] = $line[$columnNumber];
+			}
+			$line_number++;
+		}
+
+		fclose($file);
+	}
+
+	return $lookupArray;
+}

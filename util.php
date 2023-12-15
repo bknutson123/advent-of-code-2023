@@ -7,7 +7,7 @@ function iterateInput(callable $fn) {
 		$lineNumber = 1;
 		$result = 0;
 		while (($line = fgets($file)) !== false) {
-			echo "Line $lineNumber: " . rtrim($line) . PHP_EOL;
+//			echo "Line $lineNumber: " . rtrim($line) . PHP_EOL;
 			$result += $fn($line, $lineNumber);
 			$lineNumber++;
 		}
